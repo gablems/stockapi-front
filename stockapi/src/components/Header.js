@@ -8,26 +8,33 @@ export default function Header() {
   const [aberto, setAberto] = useState(false);
   const pathname = usePathname();
 
+  function alternarMenu() {
+    setAberto(!aberto);
+  }
+
   function fecharMenu() {
     setAberto(false);
   }
 
   return (
-    <header className="header">
+    <header className="header" onKeyDown={(e) => { if (e.key === "Escape") fecharMenu(); }}>
       <div className="nav-container">
         <Link href="/" className="logo" onClick={fecharMenu}>
-          Estoque
+          <div className="logo-icone">📦</div>
+          <span>StockApi</span>
         </Link>
 
         <button
           className="btn-hamburguer"
-          onClick={() => setAberto(!aberto)}
-          aria-label="Alternar Menu"
+          onClick={alternarMenu}
+          aria-label={aberto ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+          aria-expanded={aberto}
+          aria-controls="menu-principal"
         >
           {aberto ? "✕" : "☰"}
         </button>
 
-        <nav className={`nav-menu ${aberto ? "aberto" : ""}`}>
+        <nav id="menu-principal" className={`nav-menu ${aberto ? "aberto" : ""}`}>
           <Link
             href="/"
             className={`nav-link ${pathname === "/" ? "ativo" : ""}`}
@@ -61,18 +68,17 @@ export default function Header() {
             className={`nav-link ${pathname === "/pedidos" ? "ativo" : ""}`}
             onClick={fecharMenu}
           >
-            Listar Pedidos
+            Pedidos
           </Link>
           <Link
             href="/criar-pedido"
-            className={`nav-link ${pathname === "/criar-pedido" ? "ativo" : ""}`}
+            className={`nav-link nav-link-destaque ${pathname === "/criar-pedido" ? "ativo" : ""}`}
             onClick={fecharMenu}
           >
-            Criar Pedido
+            + Criar Pedido
           </Link>
         </nav>
       </div>
     </header>
   );
 }
-

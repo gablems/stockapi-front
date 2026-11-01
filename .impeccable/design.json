@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T14:52:40-04:00",
+  "title": "Design System: StockApi",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Carmim Rubi",
+        "canonical": "#e11d48",
+        "tonalRamp": [
+          "#4c0519",
+          "#881337",
+          "#9f1239",
+          "#be123c",
+          "#e11d48",
+          "#f43f5e",
+          "#fb7185",
+          "#ffe4e6"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Carmim Profundo",
+        "canonical": "#be123c",
+        "tonalRamp": [
+          "#4c0519",
+          "#881337",
+          "#9f1239",
+          "#be123c",
+          "#e11d48",
+          "#f43f5e",
+          "#fb7185",
+          "#ffe4e6"
+        ]
+      },
+      "success": {
+        "role": "secondary",
+        "displayName": "Verde Esmeralda",
+        "canonical": "#10b981",
+        "tonalRamp": [
+          "#022c22",
+          "#064e3b",
+          "#065f46",
+          "#047857",
+          "#059669",
+          "#10b981",
+          "#34d399",
+          "#d1fae5"
+        ]
+      },
+      "header-bg": {
+        "role": "neutral",
+        "displayName": "Grafite Amora",
+        "canonical": "#181119",
+        "tonalRamp": [
+          "#0a070b",
+          "#120d13",
+          "#181119",
+          "#261b28",
+          "#3d2c40",
+          "#6d5d6b",
+          "#c4b5c7",
+          "#fdf4f7"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Branco Puro",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0f172a",
+          "#334155",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0",
+          "#f8fafc",
+          "#ffffff"
+        ]
+      },
+      "surface-ground": {
+        "role": "neutral",
+        "displayName": "Porcelana Suave",
+        "canonical": "#faf5f7",
+        "tonalRamp": [
+          "#2d1f2f",
+          "#4a3b47",
+          "#6d5d6b",
+          "#a899a6",
+          "#d6cad4",
+          "#ecdbe1",
+          "#f1e4e8",
+          "#faf5f7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos principais das páginas e seções."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de cartões e blocos informativos."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto padrão de interface, células de tabela e leitura."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rótulos de campos, cabeçalhos de tabela e badges."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-rest",
+        "value": "0 2px 6px rgba(225, 29, 72, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02)",
+        "purpose": "Apoio de repouso em superfícies brancas."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 10px 15px -3px rgba(225, 29, 72, 0.08)",
+        "purpose": "Elevação tátil ao passar o mouse sobre atalhos navegáveis."
+      },
+      {
+        "name": "header-depth",
+        "value": "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "purpose": "Fixação visual da barra superior."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-quick",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Transição suave de 150ms em hovers e cliques."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "desktop",
+        "value": "769px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão Primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal em carmim rubi para ações prioritárias.",
+      "html": "<button class=\"ds-btn-primary\">Salvar Pedido</button>",
+      "css": ".ds-btn-primary { background-color: #e11d48; color: #ffffff; padding: 9px 18px; border-radius: 8px; border: 1px solid transparent; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease; } .ds-btn-primary:hover { background-color: #be123c; } .ds-btn-primary:focus-visible { outline: 2px solid #e11d48; outline-offset: 2px; }"
+    },
+    {
+      "name": "Botão de Sucesso",
+      "kind": "button",
+      "refersTo": "button-success",
+      "description": "Ação positiva em gradiente esmeralda para criação de registros.",
+      "html": "<button class=\"ds-btn-success\">+ Criar Novo Pedido</button>",
+      "css": ".ds-btn-success { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; padding: 9px 18px; border-radius: 8px; border: 1px solid transparent; font-size: 0.9rem; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2); transition: all 0.15s ease; } .ds-btn-success:hover { background: #047857; }"
+    },
+    {
+      "name": "Input de Busca",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Campo de texto filtrador com anel de foco rosado.",
+      "html": "<input type=\"text\" class=\"ds-input-search\" placeholder=\"Buscar por nome ou ID...\" aria-label=\"Buscar\" />",
+      "css": ".ds-input-search { padding: 8px 14px; border: 1px solid #e7d5dc; border-radius: 8px; font-size: 0.9rem; background-color: #ffffff; color: #1e1119; transition: border-color 0.15s, box-shadow 0.15s; } .ds-input-search:focus { outline: none; border-color: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15); }"
+    },
+    {
+      "name": "Card de Conteúdo",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Superfície branca contendo blocos de conteúdo e tabelas.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Resumo do Estoque</h3><p class=\"ds-card-desc\">Exibição organizada dos produtos cadastrados.</p></div>",
+      "css": ".ds-card { background-color: #ffffff; border: 1px solid #f1e4e8; border-radius: 12px; padding: 24px; box-shadow: 0 2px 6px rgba(225, 29, 72, 0.03); } .ds-card-title { font-size: 1.15rem; font-weight: 700; color: #1e1119; margin-bottom: 4px; } .ds-card-desc { font-size: 0.9rem; color: #6d5d6b; }"
+    },
+    {
+      "name": "Badge de Status Concluído",
+      "kind": "chip",
+      "refersTo": "badge-concluido",
+      "description": "Indicador de status positivo em formato pílula.",
+      "html": "<span class=\"ds-badge-concluido\">CONCLUÍDO</span>",
+      "css": ".ds-badge-concluido { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; background-color: #dcfce7; color: #15803d; }"
+    },
+    {
+      "name": "Badge de Status Pendente",
+      "kind": "chip",
+      "refersTo": "badge-pendente",
+      "description": "Indicador de status pendente com borda rosada.",
+      "html": "<span class=\"ds-badge-pendente\">PENDENTE</span>",
+      "css": ".ds-badge-pendente { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; background-color: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Clean Inventory Workshop",
+    "overview": "O StockApi adota a metáfora de uma oficina de estoque limpa, moderna e transparente. A interface valoriza a simplicidade absoluta e a legibilidade imediata, permitindo ao usuário bater o olho em qualquer tela ou componente e compreender sua função sem esforço cognitivo.",
+    "keyCharacteristics": [
+      "Foco em simplicidade estrutural e transparência de código.",
+      "Camadas tonais suaves em vez de sombras pesadas ou skeumorfismo.",
+      "Cabeçalho escuro fixo que ancora a navegação com logo destacada.",
+      "Ações primárias e de sucesso com alta visibilidade e contraste confortável."
+    ],
+    "rules": [
+      {
+        "name": "The Single Accent Rule",
+        "body": "O carmim rubi (#e11d48) é reservado para intenção e foco ativo; ele nunca deve cobrir grandes superfícies de fundo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grounded Surface Rule",
+        "body": "Cartões de dados sempre repousam sobre fundo branco (#ffffff), apoiados sobre a porcelana suave (#faf5f7), garantindo separação visual sem ruído.",
+        "section": "colors"
+      },
+      {
+        "name": "The Native Stack Rule",
+        "body": "A pilha tipográfica mantém-se exclusivamente em fontes de sistema, assegurando performance imediata e visual nativo em qualquer plataforma.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Superfícies mantêm-se planas e nítidas em repouso. Sombras marcantes e deslocamento vertical só ocorrem como feedback de foco ou hover.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do manter todos os botões e campos de formulário com border-radius: 8px e foco visível em tons de carmim.",
+      "Do garantir que toda tabela esteja dentro de um container com overflow-x: auto para manter a integridade mobile.",
+      "Do preservar a regra acadêmica de zero comentários em todo o código-fonte da aplicação.",
+      "Do manter a simplicidade dos estilos em CSS nativo legível para que qualquer propriedade possa ser explicada com facilidade."
+    ],
+    "donts": [
+      "Don't aplicar fundos escuros no corpo das páginas ou nos cartões de dados (o fundo escuro é exclusivo do cabeçalho).",
+      "Don't utilizar caixas de sombra pesadas ou bordas com espessura maior que 1px.",
+      "Don't criar elementos decorativos sem propósito funcional na listagem ou cadastro de pedidos.",
+      "Don't introduzir fontes externas pesadas via Google Fonts ou scripts de terceiros."
+    ]
+  }
+}
+
