@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+stockapi/node_modules/
+/.pnp
+.pnp.*
+
+# Build & Output
+.next/
+stockapi/.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment & Secrets
+.env
+.env*.local
+.env.production
+.env.development
+
+# Vercel
+.vercel/
+
+# Logs & Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# OS & System
+.DS_Store
+Thumbs.db
+*.pem
+
+# Documentos locais de desenvolvimento
+/guia.txt
+
+# Ferramentas de Design / UI (Impeccable & UI-UX Pro Max)
+.impeccable/
+.impeccable*/
+**/.impeccable/
+**/.impeccable*/
+DESIGN.md
+PRODUCT.md

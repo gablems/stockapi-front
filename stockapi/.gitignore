@@ -29,6 +29,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Ferramentas de Design / UI (Impeccable & UI-UX Pro Max)
+.impeccable/
+.impeccable*/
+DESIGN.md
+PRODUCT.md
+
 # impeccable-live-ignore-start
 .impeccable/hook.cache.json
 .impeccable/hook.pending.json
