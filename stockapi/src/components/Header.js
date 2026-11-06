@@ -79,6 +79,13 @@ export default function Header() {
           </Link>
         </nav>
       </div>
+      {aberto && (
+        <div
+          className="nav-overlay"
+          onClick={fecharMenu}
+          aria-hidden="true"
+        />
+      )}
     </header>
   );
 }

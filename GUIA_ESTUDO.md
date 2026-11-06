@@ -34,7 +34,7 @@ Esses são os métodos de JavaScript que a gente usou pra manipular as listas qu
 | **`useState`** | **Variável reativa (estado).** Quando o valor dela muda, o React atualiza o pedaço da tela na hora. | Guarda os dados da API (`produtos`, `clientes`), textos de busca (`busca`), avisos de tela (`carregando`, `erro`) e itens do carrinho. |
 | **`useEffect`** | **Efeito colateral / ciclo de vida.** Executa uma função automaticamente quando a página abre. | O array vazio `[]` no final faz ele rodar **só uma vez** assim que a tela abre, disparando o `fetch` pra buscar os dados no servidor. |
 | **`useRouter`** | **Navegação via código.** | Usamos o `router.push("/pedidos")` pra redirecionar o usuário pra página de pedidos logo depois de salvar o formulário. |
-| **`usePathname`** | **Pega a rota atual do navegador.** | Usado no Header pra saber em qual página o usuário tá e pintar o link do menu de vermelho/ativo (`pathname === "/produtos"`). |
+| **`usePathname`** | **Pega a rota atual do navegador.** | Usado no Header pra saber em qual página o usuário tá e destacar o link do menu com a cor rosa/ativo (`pathname === "/produtos"`). |
 | **`<Link href="...">`** | **Link rápido do Next.js.** | Substitui a tag `<a>` comum. Não recarrega a página do zero, troca de tela instantaneamente (SPA). |
 | **Renderização Condicional** | **Mostrar ou esconder algo na tela com base numa regra.** | `{carregando ? (<p>Carregando...</p>) : (<tabela>)}` ou `{erro && (<p>Deu ruim</p>)}`. |
 
@@ -90,5 +90,11 @@ Usados na tela de **Criar Pedido** e nas **Barras de Busca**:
   * `@media (max-width: 768px)`: Regras que só funcionam em celular (ativa o botão hambúrguer `☰` e esconde o menu comum).
   * `@media (min-width: 769px)`: Regras pra computador/desktop (esconde o hambúrguer e exibe a barra de links completa).
 * **Variáveis CSS (`:root`)**: Guarda cores padrões no topo do CSS (como `--cor-primaria`), facilitando trocar a cor do sistema inteiro num só lugar.
+* **Tema Rosa e Identidade Visual (Sem Gradiente)**:
+  * Todas as cores são sólidas (`background-color`), sem nenhum gradiente, deixando o CSS limpo e direto.
+  * O fundo geral (`body`) usa um rosa suave (`#fdf2f8`), garantindo contraste perfeito com os cartões brancos.
+  * O cabeçalho usa vinho escuro (`#260f1d`) com uma borda inferior rosa pink (`#db2777`).
+  * As ações primárias e links ativos usam rosa pink vibrante (`#db2777`).
+  * Detalhes sutis: as bordas dos cards e tabelas usam rosa suave (`#fbcfe8`), e os avatares dos clientes usam círculos rosa (`#fce7f3`) com a inicial em destaque.
 * **`position: sticky; top: 0`**: Faz a barra do cabeçalho ficar presa no topo da página quando a gente rola a tela pra baixo.
 

@@ -54,7 +54,7 @@ export default function CategoriasPage() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
-          <div style={{ fontSize: "0.85rem", color: "#64748b" }}>
+          <div style={{ fontSize: "0.85rem", color: "#7b586e" }}>
             Total exibido: <strong>{categoriasFiltradas.length}</strong> de {categorias.length}
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function CategoriasPage() {
                 {categoriasFiltradas.map((cat) => (
                   <tr key={cat.id}>
                     <td>
-                      <span style={{ color: "#64748b", fontWeight: 600 }}>#{cat.id}</span>
+                      <span style={{ color: "#7b586e", fontWeight: 600 }}>#{cat.id}</span>
                     </td>
                     <td>
                       <strong>{cat.nome}</strong>
@@ -93,7 +93,7 @@ export default function CategoriasPage() {
                     <td>
                       <Link
                         href="/produtos"
-                        style={{ fontSize: "0.85rem", color: "#2563eb", fontWeight: 600 }}
+                        style={{ fontSize: "0.85rem", color: "#db2777", fontWeight: 600 }}
                       >
                         Ver produtos →
                       </Link>

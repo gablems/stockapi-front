@@ -51,10 +51,7 @@ export default function CriarPedidoPage() {
       return;
     }
 
-    if (Number(quantidade) <= 0) {
-      alert("A quantidade deve ser maior do que zero.");
-      return;
-    }
+    const qtdNum = Math.max(1, parseInt(quantidade, 10) || 1);
 
     const produtoEncontrado = produtos.find((p) => p.id === Number(produtoId));
     if (!produtoEncontrado) return;
@@ -67,7 +64,7 @@ export default function CriarPedidoPage() {
           if (item.produto_id === produtoEncontrado.id) {
             return {
               ...item,
-              quantidade: Number(item.quantidade) + Number(quantidade),
+              quantidade: Number(item.quantidade) + qtdNum,
             };
           }
           return item;
@@ -80,7 +77,7 @@ export default function CriarPedidoPage() {
           produto_id: produtoEncontrado.id,
           nome: produtoEncontrado.nome,
           preco_unitario: Number(produtoEncontrado.preco),
-          quantidade: Number(quantidade),
+          quantidade: qtdNum,
         },
       ]);
     }
@@ -230,7 +227,7 @@ export default function CriarPedidoPage() {
           </div>
 
           <div className="caixa-cinza">
-            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#1e293b", marginBottom: "12px" }}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#2d1222", marginBottom: "12px" }}>
               Adicionar Produtos ao Carrinho
             </h3>
 
@@ -257,6 +254,7 @@ export default function CriarPedidoPage() {
                   id="campoQtd"
                   type="number"
                   min="1"
+                  step="1"
                   value={quantidade}
                   onChange={(e) => setQuantidade(e.target.value)}
                 />
@@ -274,19 +272,19 @@ export default function CriarPedidoPage() {
             </div>
 
             {produtoAtual && (
-              <div style={{ marginTop: "12px", fontSize: "0.85rem", color: "#475569" }}>
+              <div style={{ marginTop: "12px", fontSize: "0.85rem", color: "#7b586e" }}>
                 Preço Unitário: <strong>R$ {Number(produtoAtual.preco).toFixed(2)}</strong> | Estoque disponível: <strong>{produtoAtual.quantidade_estoque} un.</strong>
               </div>
             )}
           </div>
 
           <div>
-            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#1e293b", marginBottom: "8px" }}>
+            <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#2d1222", marginBottom: "8px" }}>
               Itens Adicionados ({itens.length})
             </h3>
 
             {itens.length === 0 ? (
-              <div className="aviso-vazio" style={{ border: "1px dashed #cbd5e1", borderRadius: "8px" }}>
+              <div className="aviso-vazio" style={{ border: "1px dashed #fbcfe8", borderRadius: "8px" }}>
                 Nenhum produto foi adicionado ainda. Escolha os itens acima para montar o pedido.
               </div>
             ) : (
@@ -329,8 +327,8 @@ export default function CriarPedidoPage() {
               </div>
             )}
 
-            <div style={{ textAlign: "right", marginTop: "16px", padding: "12px 0", borderTop: "1px solid #e2e8f0" }}>
-              <span style={{ fontSize: "0.95rem", color: "#64748b", marginRight: "8px" }}>Valor Total:</span>
+            <div style={{ textAlign: "right", marginTop: "16px", padding: "12px 0", borderTop: "1px solid #fbcfe8" }}>
+              <span style={{ fontSize: "0.95rem", color: "#7b586e", marginRight: "8px" }}>Valor Total:</span>
               <span style={{ fontSize: "1.3rem", fontWeight: 700, color: "#16a34a" }}>
                 R$ {valorTotal.toFixed(2)}
               </span>

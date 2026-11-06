@@ -61,7 +61,7 @@ export default function Home() {
           <div className="dupla-grid">
             <div className="dupla-item">
               <span className="dupla-nome">Gabriela Lemes</span>
-              <span className="dupla-papel">Desenvolvedora Front-End</span>
+              <span className="dupla-papel">Desenvolvedora</span>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
 
         <div className="estatisticas-grid">
           <div className="estatistica-card">
-            <div className="estatistica-icone" style={{ backgroundColor: "#eff6ff", color: "#2563eb" }}>
+            <div className="estatistica-icone" style={{ backgroundColor: "#fce7f3", color: "#db2777" }}>
               📑
             </div>
             <div>
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
 
           <div className="estatistica-card">
-            <div className="estatistica-icone" style={{ backgroundColor: "#f0fdf4", color: "#16a34a" }}>
+            <div className="estatistica-icone" style={{ backgroundColor: "#ffe4e6", color: "#e11d48" }}>
               🛒
             </div>
             <div>
@@ -98,7 +98,7 @@ export default function Home() {
           </div>
 
           <div className="estatistica-card">
-            <div className="estatistica-icone" style={{ backgroundColor: "#fef3c7", color: "#d97706" }}>
+            <div className="estatistica-icone" style={{ backgroundColor: "#fae8ff", color: "#c026d3" }}>
               👥
             </div>
             <div>
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
 
           <div className="estatistica-card">
-            <div className="estatistica-icone" style={{ backgroundColor: "#faf5ff", color: "#9333ea" }}>
+            <div className="estatistica-icone" style={{ backgroundColor: "#fdf2f8", color: "#9d174d" }}>
               🏷️
             </div>
             <div>

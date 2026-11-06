@@ -58,7 +58,7 @@ export default function ClientesPage() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
-          <div style={{ fontSize: "0.85rem", color: "#64748b" }}>
+          <div style={{ fontSize: "0.85rem", color: "#7b586e" }}>
             Total exibido: <strong>{clientesFiltrados.length}</strong> de {clientes.length}
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function ClientesPage() {
                 {clientesFiltrados.map((c) => (
                   <tr key={c.id}>
                     <td>
-                      <span style={{ color: "#64748b", fontWeight: 600 }}>#{c.id}</span>
+                      <span style={{ color: "#7b586e", fontWeight: 600 }}>#{c.id}</span>
                     </td>
                     <td>
                       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -99,8 +99,8 @@ export default function ClientesPage() {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            backgroundColor: "#eff6ff",
-                            color: "#2563eb",
+                            backgroundColor: "#fce7f3",
+                            color: "#db2777",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -113,8 +113,8 @@ export default function ClientesPage() {
                         <strong>{c.nome}</strong>
                       </div>
                     </td>
-                    <td>{c.email || <span style={{ color: "#64748b" }}>Não informado</span>}</td>
-                    <td>{c.telefone || <span style={{ color: "#64748b" }}>Não informado</span>}</td>
+                    <td>{c.email || <span style={{ color: "#7b586e" }}>Não informado</span>}</td>
+                    <td>{c.telefone || <span style={{ color: "#7b586e" }}>Não informado</span>}</td>
                   </tr>
                 ))}
               </tbody>

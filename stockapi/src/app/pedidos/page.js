@@ -62,6 +62,7 @@ export default function PedidosPage() {
   function formatarData(dataString) {
     if (!dataString) return "-";
     const data = new Date(dataString);
+    if (isNaN(data.getTime())) return dataString;
     return data.toLocaleDateString("pt-BR") + " às " + data.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   }
 
@@ -100,14 +101,14 @@ export default function PedidosPage() {
           />
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <label htmlFor="filtroStatus" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#475569" }}>
+            <label htmlFor="filtroStatus" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#7b586e" }}>
               Status:
             </label>
             <select
               id="filtroStatus"
               value={filtroStatus}
               onChange={(e) => setFiltroStatus(e.target.value)}
-              style={{ padding: "8px 12px", borderRadius: "8px", border: "1px solid #cbd5e1" }}
+              style={{ padding: "8px 12px", borderRadius: "8px", border: "1px solid #fbcfe8", color: "#2d1222" }}
             >
               <option value="todos">Todos os status</option>
               <option value="pendente">Pendente</option>
@@ -117,7 +118,7 @@ export default function PedidosPage() {
             </select>
           </div>
 
-          <div style={{ fontSize: "0.85rem", color: "#64748b" }}>
+          <div style={{ fontSize: "0.85rem", color: "#7b586e" }}>
             Total exibido: <strong>{pedidosFiltrados.length}</strong> de {pedidos.length}
           </div>
         </div>
@@ -147,7 +148,7 @@ export default function PedidosPage() {
               <div className="pedido-topo">
                 <div>
                   <span className="pedido-id">Pedido #{pedido.id}</span>
-                  <span style={{ margin: "0 10px", color: "#cbd5e1" }}>•</span>
+                  <span style={{ margin: "0 10px", color: "#fbcfe8" }}>•</span>
                   <span className="pedido-cliente">
                     Cliente: <strong>{obterNomeCliente(pedido.cliente_id)}</strong>
                   </span>
@@ -168,7 +169,7 @@ export default function PedidosPage() {
                 </div>
 
                 {itensDoPedido.length === 0 ? (
-                  <div style={{ padding: "12px", color: "#64748b", fontSize: "0.85rem", textAlign: "center" }}>
+                  <div style={{ padding: "12px", color: "#7b586e", fontSize: "0.85rem", textAlign: "center" }}>
                     Nenhum item vinculado a este pedido.
                   </div>
                 ) : (
@@ -184,14 +185,14 @@ export default function PedidosPage() {
                       </thead>
                       <tbody>
                         {itensDoPedido.map((item) => {
-                          const subtotal = Number(item.quantidade) * Number(item.preco_unitario);
+                          const subtotal = Number(item.quantidade || 0) * Number(item.preco_unitario || 0);
                           return (
                             <tr key={item.id}>
                               <td>
                                 <strong>{obterNomeProduto(item.produto_id)}</strong>
                               </td>
                               <td>{item.quantidade} unidade(s)</td>
-                              <td>R$ {Number(item.preco_unitario).toFixed(2)}</td>
+                              <td>R$ {Number(item.preco_unitario || 0).toFixed(2)}</td>
                               <td>
                                 <strong>R$ {subtotal.toFixed(2)}</strong>
                               </td>

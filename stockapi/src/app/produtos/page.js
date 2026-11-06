@@ -77,14 +77,14 @@ export default function ProdutosPage() {
           />
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <label htmlFor="filtroCategoria" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#475569" }}>
+            <label htmlFor="filtroCategoria" style={{ fontSize: "0.85rem", fontWeight: 600, color: "#7b586e" }}>
               Categoria:
             </label>
             <select
               id="filtroCategoria"
               value={categoriaSelecionada}
               onChange={(e) => setCategoriaSelecionada(e.target.value)}
-              style={{ padding: "8px 12px", borderRadius: "8px", border: "1px solid #cbd5e1" }}
+              style={{ padding: "8px 12px", borderRadius: "8px", border: "1px solid #fbcfe8", color: "#2d1222" }}
             >
               <option value="todas">Todas as categorias</option>
               {categorias.map((cat) => (
@@ -95,7 +95,7 @@ export default function ProdutosPage() {
             </select>
           </div>
 
-          <div style={{ fontSize: "0.85rem", color: "#64748b" }}>
+          <div style={{ fontSize: "0.85rem", color: "#7b586e" }}>
             Total exibido: <strong>{produtosFiltrados.length}</strong> de {produtos.length}
           </div>
         </div>
@@ -129,19 +129,19 @@ export default function ProdutosPage() {
                 {produtosFiltrados.map((p) => (
                   <tr key={p.id}>
                     <td>
-                      <span style={{ color: "#64748b", fontWeight: 600 }}>#{p.id}</span>
+                      <span style={{ color: "#7b586e", fontWeight: 600 }}>#{p.id}</span>
                     </td>
                     <td>
                       <strong>{p.nome}</strong>
                     </td>
                     <td>
-                      <span className="badge" style={{ backgroundColor: "#f1f5f9", color: "#334155" }}>
+                      <span className="badge" style={{ backgroundColor: "#fdf2f8", color: "#9d174d", border: "1px solid #fbcfe8" }}>
                         {obterNomeCategoria(p.categoria_id)}
                       </span>
                     </td>
                     <td>
                       <strong style={{ color: "#16a34a" }}>
-                        R$ {Number(p.preco).toFixed(2)}
+                        R$ {Number(p.preco || 0).toFixed(2)}
                       </strong>
                     </td>
                     <td>
@@ -155,7 +155,7 @@ export default function ProdutosPage() {
                         {p.quantidade_estoque} un.
                       </span>
                     </td>
-                    <td style={{ color: "#64748b" }}>{p.descricao || "-"}</td>
+                    <td style={{ color: "#7b586e" }}>{p.descricao || "-"}</td>
                   </tr>
                 ))}
               </tbody>
